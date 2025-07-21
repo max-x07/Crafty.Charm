@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <title>Crafty Charm</title>
+    <style>
+      /* Navigation Styling*/
+      header {
+            background-color: rgba(97, 133, 145, 0.46);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            z-index: 1000;
+      }
+
+        header img {
+            height: 75px;
+            margin-left: 0px;
+        }
+
+        /* Nav - Search Bar Styling */
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-control {
+            background-color: rgb(238, 224, 224);
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+
+        .button1 {
+            background-color: brown;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin-top: 80px; 
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        .fade {
+            animation: fade 15s;
+        }
+
+        @keyframes fade {
+            from { opacity: .4 } 
+            to { opacity: 1 }
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Dots */
+        .dot-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: black;
+        }
+
+/* About Banners */
+.section-banner {
+  width: 100%;
+  background-color: #cae3f1;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  /*margin-top: 9px; /* below fixed navbar */
+  text-align: center;
+  animation: slideDownBanner 1s ease-out forwards;
+  opacity: 0;
+  position: relative;
+  z-index: 900; /* just under navbar */
+}
+
+.section-banner h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #284279;
+  font-weight: bold;
+}
+
+/* Slide Down Animation */
+@keyframes slideDownBanner {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.section-banner2{
+width: 100%;
+background-color: #3a7191;
+padding-top: 25px;
+padding-bottom: 25px;
+text-align: center;
+animation: slideDownBanner 1s ease-out forwards;
+opacity: 0;
+position: relative;
+z-index: 900; /* just under navbar */ 
+}
+
+.section-banner2 p {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 1.5rem;
+  color: #cae3f1;
+  font-weight: bold;
+}
+
+.section-banner3 {
+  width: 100%;
+  background-color: #cae3f1;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  /*margin-top: 9px; /* below fixed navbar */
+  text-align: center;
+  animation: slideDownBanner 1s ease-out forwards;
+  opacity: 0;
+  position: relative;
+  z-index: 900; /* just under navbar */
+}
+
+.section-banner3 h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #284279;
+  font-weight: bold;
+}
+
+.section-banner4{
+width: 100%;
+background-color: #3a7191;
+padding-top: 25px;
+padding-bottom: 25px;
+text-align: center;
+animation: slideDownBanner 1s ease-out forwards;
+opacity: 0;
+position: relative;
+z-index: 900; /* just under navbar */ 
+}
+
+.section-banner4 p {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 1.5rem;
+  color: #cae3f1;
+  font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <img src="Logo.png" alt="">
+    <nav class="navbar navbar-expand-lg w-100">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="crochet.html">Crochet Items</a></li>
+                    <li class="nav-item"><a class="nav-link" href="jewelry.html">Handmade Jewelry</a></li>
+                    <li class="nav-item"><a class="nav-link" href="children.html">Barbie Outlet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="FAQs.html">FAQs</a></li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+<!-- Slideshow -->
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="homelogo.png" style="width:100%" height="1000px">
+    </div>
+    <div class="mySlides fade">
+        <img src="homebracelets.jpg" style="width:100%" height="1000px">
+    </div>
+    <div class="mySlides fade">
+        <img src="homepus.jpg" style="width:100%" height="1000px">
+    </div>
+
+    <!-- Slideshow Navigation -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<!-- Dots -->
+<div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<!-- Slideshow JavaScript -->
+<script>
+        let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+    }
+
+    // Auto-advance every 5 seconds
+    setInterval(() => {
+        plusSlides(1);
+    }, 6000);
+</script>
+
+<!--About Section-->
+<div class="section-banner">
+  <h1>About Crafty Charm</h1>
+</div>
+
+<div class="section-banner2" data-aos="fade-down">
+  <p>Welcome to Crafty Charm. We specialize in custom handmade jewelry, including bracelets, necklaces, and anklets, as well as beautifully crafted crochet creations tailored to your vision. From cozy accessories to imaginative children's toys, everything we make is designed with care, creativity, and charm.</p>
+</div>
+
+<div class="section-banner3">
+    <h1>About Our Barbie Outlet</h1>
+</div>
+
+<div class="section-banner4">
+    <p>Our Barbie Outlet features unique Barbie sets created for hours of imagination.</p>
+</div>
+
+</body>
+</html>
